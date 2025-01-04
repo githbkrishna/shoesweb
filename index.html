@@ -20,18 +20,22 @@
       <div class="logo">
         <h1>Shoe<span>s</span></h1>
       </div>
-      <ul class="lists">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#review">Review</a></li>
-        <!-- <li><a href="#contact">Contact</a></li> -->
-      </ul>
+      <div class="menus">
+        <ul class="">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#review">Review</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="fa-solid fa-multiply"></i>
+      </div>
       <div class="icons">
         <i class="fa-solid fa-heart"></i>
         <i class="fa-solid fa-cart-shopping"></i>
         <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-bars-staggered" id="ham"></i>
       </div>
     </nav>
 
@@ -41,13 +45,13 @@
           <div class="left">
             <h2>NIKE <br><span> Collection</span></h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            <button class="main-btn btn">Shop Now <span><i class="fa-solid fa-chevron-right"></i></span></button>
           </div>
           <div class="right">
             <img src="./images/shoes.png" alt="" />
           </div>
         </div>
   
-        <button class="main-btn btn">Shop Now <span><i class="fa-solid fa-chevron-right"></i></span></button>
       </div> 
     </section>
 
@@ -213,6 +217,7 @@
     <div class="about" id="about">
       <h2>About</h2>
       <div class="three">
+
         <div class="one">
           <div class="box">
             <div class="box-img">
@@ -229,11 +234,13 @@
             </div>
           </div>
         </div>
+
         <div class="one1">
           <div class="image">
             <img src="./images/red_shoes1.png" alt="" id="imagebox">
           </div>
         </div>
+
         <div class="one2">
           <p>Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates iste dolores impedit nesciunt assumenda quas vitae autem adipisci quo incidunt earum dolorem accusantium officiis totam accusamus laudantium ad repellat temporibus, dolor voluptate. Repudiandae error molestiae ab quisquam at Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cum ipsam corporis accusamus numquam odio rem, modi quod exercitationem, expedita, quia in? quasi quae! adipisicing elit. Accusamus iste culpa nulla sed obcaecati nesciunt quod illo quidem quis suscipit expedita deleniti facilis enim quae laboriosam laborum harum quisquam nihil commodi reiciendis corrupti, molestiae hic similique. Quasi, excepturi? Eius culpa, porro aliquam amet veniam ex illum suscipit perferendis laborum! Nemo voluptates repellendus dolorum blanditiis dicta.</p>
         </div>
@@ -408,53 +415,49 @@
     </div>
     
     <footer>
-      <div class="footer">
-        <h2>Quick links</h2>
-        <ul>
-          <li><a href="">home</a></li>
-          <li><a href="">about</a></li>
-          <li><a href="">contact</a></li>
-          <li><a href="">services</a></li>
-        </ul>
+      <div class="foot">
+          <h2>Created with <br> 🧡 by Hariom Singh</h2>
       </div>
-
-      <div class="footer">
-        <h2>Quick links</h2>
-        <ul>
-          <li><a href="">home</a></li>
-          <li><a href="">about</a></li>
-          <li><a href="">contact</a></li>
-          <li><a href="">services</a></li>
-        </ul>
+      <div class="foot">
+          <h2>#Quick Links</h2>
+          <ul>
+              <li><a href="">About</a></li>
+              <li><a href="">Education</a></li>
+              <li><a href="">Courses</a></li>
+              <li><a href="">Contact</a></li>
+          </ul>
       </div>
-
-      <div class="footer">
-        <h2>Quick links</h2>
-        <ul>
-          <li><a href="">home</a></li>
-          <li><a href="">about</a></li>
-          <li><a href="">contact</a></li>
-          <li><a href="">services</a></li>
-        </ul>
-      </div>
-
-      <div class="footer">
-        <h2>Quick links</h2>
-        <ul>
-          <li><a href="">home</a></li>
-          <li><a href="">about</a></li>
-          <li><a href="">contact</a></li>
-          <li><a href="">services</a></li>
-        </ul>
+      <div class="foot">
+          <h2>Social</h2>
+          <ul class='social'>
+              <li><a href="mailto:krishna6364714@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/hariomsingh97" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+              <li><a href="https://github.com/githbkrishna" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+          </ul>
       </div>
     </footer>
 
-    <!-- about image script -->
     <script>
+      
+      // navbar
+      const ham = document.getElementById("ham");
+      ham.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const menus = document.querySelector(".menus");
+        const multiply = document.querySelector(".fa-multiply");
+        menus.style.display = this.classList.contains("active") ? "block" : "none";
+        multiply.addEventListener("click", function(){
+          menus.style.display = "none"
+        })
+      });
+
+            
+      // about image script
       function functio(small) {
         var full = document.getElementById("imagebox")
         full.src = small.src
       }
+
     </script>
 
   </body>
